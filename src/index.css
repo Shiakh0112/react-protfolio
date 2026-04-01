@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-black: #1a1a1a;
+  --primary-dark: #0f1014;
+  --accent-gold: #c9a961;
+  --accent-light-gold: #e5c585;
+  --accent-light-gold-text: #efc777;
+  --text-white: #ffffff;
+  --text-gray: #b8b8b8;
+  --border-color: 2px solid rgba(239, 200, 123, 0.3);
+}
+
+[data-theme="light"] {
+  --primary-black: #fafaf8;
+  --primary-dark: #f2f0eb;
+  --accent-gold: #c9a961;
+  --accent-light-gold: #a07828;
+  --accent-light-gold-text: #8a6420;
+  --text-white: #0d0d0d;
+  --text-gray: #4a4a52;
+  --border-color: rgba(160, 120, 40, 0.2);
+}
+
+/* Light mode section backgrounds */
+[data-theme="light"] #hero {
+  background: linear-gradient(135deg, #f2f0eb 0%, #fafaf8 100%) !important;
+}
+[data-theme="light"] #about {
+  background: #ffffff !important;
+}
+[data-theme="light"] #projects {
+  background: #f5f3ee !important;
+}
+[data-theme="light"] #best-projects {
+  background: #ffffff !important;
+}
+[data-theme="light"] #skills {
+  background: #f5f3ee !important;
+}
+[data-theme="light"] #education {
+  background: #ffffff !important;
+}
+[data-theme="light"] #contact {
+  background: #f2f0eb !important;
+}
+[data-theme="light"] footer {
+  background: #1a1a1a !important;
+}
+
+/* Navbar */
+[data-theme="light"] nav {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.07) !important;
+  backdrop-filter: blur(12px);
+}
+[data-theme="light"] .nav-link {
+  color: #0d0d0d !important;
+  text-shadow: none !important;
+}
+
+/* Cards */
+[data-theme="light"] .proj-card {
+  background: #ffffff !important;
+  border-color: rgba(160, 120, 40, 0.15) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+[data-theme="light"] .proj-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+}
+[data-theme="light"] .skill-card {
+  background: #ffffff !important;
+  border-color: rgba(160, 120, 40, 0.15) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Info items in About */
+[data-theme="light"] .info-item {
+  background: #f5f3ee !important;
+}
+
+/* Edu rows */
+[data-theme="light"] .edu-row {
+  border-color: rgba(160, 120, 40, 0.15) !important;
+}
+
+/* Inputs & Textarea */
+[data-theme="light"] input,
+[data-theme="light"] textarea {
+  background: #ffffff !important;
+  color: #0d0d0d !important;
+  border-color: rgba(160, 120, 40, 0.25) !important;
+}
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #aaaaaa !important;
+}
+
+/* Ghost text in contact */
+[data-theme="light"] #contact .absolute.whitespace-nowrap {
+  -webkit-text-stroke: 1px rgba(160, 120, 40, 0.08) !important;
+}
+
+/* Light mode golden lines & gradients fix */
+[data-theme="light"] [style*="rgba(229,197,133"] {
+  opacity: 1;
+}
+[data-theme="light"] .about-divider {
+  background: linear-gradient(to right, #a07828, transparent) !important;
+}
+[data-theme="light"] .edu-row {
+  border-color: rgba(160, 120, 40, 0.35) !important;
+}
+[data-theme="light"] [class*="skills-orb"] {
+  opacity: 0.15;
+}
+/* Top/bottom border lines in sections */
+[data-theme="light"] #skills .absolute[style*="linear-gradient"],
+[data-theme="light"] #education .absolute[style*="linear-gradient"],
+[data-theme="light"] #contact .absolute[style*="linear-gradient"] {
+  opacity: 0.6 !important;
+}
+/* Footer top line */
+[data-theme="light"] footer > div:first-child {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(160, 120, 40, 0.8) 20%,
+    rgba(160, 120, 40, 0.8) 80%,
+    transparent
+  ) !important;
+}
+/* Marquee text */
+[data-theme="light"] footer span[style*="rgba(255,255,255,0.15)"] {
+  color: rgba(0, 0, 0, 0.35) !important;
+}
+[data-theme="light"] footer span[style*="rgba(255,255,255,0.08)"] {
+  color: rgba(0, 0, 0, 0.2) !important;
+}
+/* Skill bar track */
+[data-theme="light"] .skill-bar-fill {
+  background: linear-gradient(
+    to right,
+    rgba(160, 120, 40, 0.7),
+    #a07828
+  ) !important;
+}
+/* Corner accents on skill cards */
+[data-theme="light"] .skill-card > div[style*="borderTop"],
+[data-theme="light"] .skill-card > div[style*="borderBottom"] {
+  border-color: rgba(160, 120, 40, 0.6) !important;
+}
+
+/* Headings */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4 {
+  color: #0d0d0d;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--primary-black);
+  color: var(--text-white);
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
