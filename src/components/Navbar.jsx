@@ -3,11 +3,12 @@ import gsap from "gsap";
 import { useTheme } from "../context/ThemeContext";
 
 const links = [
-  { label: "Home",      href: "#hero"      },
-  { label: "About",     href: "#about"     },
-  { label: "Projects",  href: "#projects"  },
-  { label: "Skills",    href: "#skills"    },
-  { label: "Education", href: "#education" },
+  { label: "Home",           href: "#hero"           },
+  { label: "About",          href: "#about"          },
+  { label: "Projects",       href: "#projects"       },
+  { label: "Skills",         href: "#skills"         },
+  { label: "Education",      href: "#education"      },
+  { label: "Certifications", href: "#certifications" },
 ];
 
 export default function Navbar() {

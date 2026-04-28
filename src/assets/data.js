@@ -1,23 +1,11 @@
 // ── Projects ─────────────────────────────────────────────────────────
 
-import blog1 from "./images2/1 blog.png";
-import blogdetail1 from "./images2/1 blogdetail.png";
-import blog2 from "./images2/2 blog.png";
-import blogdetail2 from "./images2/2 blogdetail.png";
-import memry3 from "./images2/3 memry card .png";
-//
-import incom4 from "./images2/4 Income Expense Calculator Task .png";
-//
-import product5 from "./images2/5 product page .png";
-//
-import router6 from "./images2/6 router.png";
 //
 import movie7 from "./images2/7 movie.png";
 import moviedetail7 from "./images2/7 moviedetail.png";
 import authenticaion8 from "./images2/8 authentication.png";
 import authenticaiondetail8 from "./images2/8 authenticaionDetail.png";
 import reset_password9 from "./images2/9 reset password.png";
-//
 import recipi10 from "./images2/10 recipi api.png";
 import recipidetail10 from "./images2/10 recipi api Detail.png";
 
@@ -30,117 +18,17 @@ import recipe3 from "./images2/bestproject/3 bestimg recipi.png";
 import recipedetail3 from "./images2/bestproject/3 bestimg recipidetails.png";
 import expense4 from "./images2/bestproject/4 bestimg expense.png";
 import dashboard5 from "./images2/bestproject/5 bestimg dashboard.png";
-
+import cityguard1 from "./images2/bestproject/5 bestimg dashboard.png";
+import cityguardDetail1 from "./images2/bestproject/5 bestimg dashboard.png";
+import ProjectManagement11 from "./images2/Project Management 11.png";
+import ProjectManagementDetail11 from "./images2/11 Project Management details .png";
 export const allProjects = [
   {
     id: 1,
     category: "frontend",
-    title: "Responsive Landing Page",
-    desc: "Designed and developed a responsive landing page based on Figma design. Implemented clean UI structure using HTML and CSS. Ensured cross-device compatibility with responsive layouts. Focused on pixel-perfect design, proper spacing, and modern styling techniques.",
-    tags: ["HTML", "CSS", "Responsive Design", "Figma"],
-    link: "https://shaikh-landing-page.netlify.app/",
-    github:
-      "https://github.com/Shiakh0112/GUVI-class-1-assignment-completed-HTML-CSS-Landing-Page-Task",
-    img: blog1,
-    detailImg: blogdetail1,
-    startDate: "Jan 2024",
-    endDate: "Jan 2024",
-    language: "HTML & CSS",
-  },
-  {
-    id: 2,
-    category: "frontend",
-    title: "Tailwind CSS Landing Page",
-    desc: "Designed and developed a modern landing page using HTML and Tailwind CSS based on a Figma design. Implemented a utility-first approach to build clean and maintainable UI components efficiently. Ensured mobile-first responsive design using Tailwind breakpoints for seamless performance across all devices. Focused on pixel-perfect implementation, consistent spacing, typography, and alignment. Improved development speed by leveraging reusable utility classes and optimized layout structure for better readability and scalability.",
-    tags: ["HTML", "Tailwind CSS", "Responsive Design", "Figma"],
-    link: "https://tailwindlandingpag.netlify.app/",
-    github: "https://github.com/Shiakh0112/landing-page2-tailwind",
-    img: blog2,
-    detailImg: blogdetail2,
-    startDate: "Jan 2024",
-    endDate: "Jan 2024",
-    language: "HTML & Tailwind CSS",
-  },
-  {
-    id: 3,
-    category: "frontend",
-    title: "Memory Card Game",
-    desc: "Developed an interactive memory card matching game using HTML, CSS, and JavaScript (DOM manipulation). Implemented core game logic including card flipping, matching pairs, and maintaining game state. Added a shuffle algorithm to randomize card positions at the start of each game for better gameplay experience. Designed logic to compare flipped cards and handle matched and unmatched states with delay-based animations. Included a restart functionality to reset and replay the game seamlessly. Ensured responsive design for smooth gameplay across desktop and mobile devices. Focused on clean code structure, modular logic, and user-friendly interface.",
-    tags: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "DOM Manipulation",
-      "Game Logic",
-      "Responsive Design",
-    ],
-    link: "https://memory-gamenet.netlify.app/",
-    github: "https://github.com/Shiakh0112/GUVI-assignment-3-Memory-Card-Game",
-    img: memry3,
-    detailImg: memry3,
-    startDate: "Jan 2024",
-    endDate: "Jan 2024",
-    language: "JavaScript",
-  },
-  {
-    id: 4,
-    category: "frontend",
-    title: "Income Expense Calculator",
-    desc: "Developed a fully functional Income and Expense Calculator using HTML, CSS, and JavaScript with complete CRUD operations. Implemented features to add, edit, and delete financial entries dynamically, allowing users to manage their income and expenses efficiently. Designed filtering functionality (All, Income, Expense) using radio buttons to view specific data categories. Integrated real-time calculations to display total income, total expenses, and net balance. Utilized Local Storage to persist user data across sessions, ensuring data is retained even after page refresh. Built a responsive and user-friendly interface with clean layout, proper input handling, and reset functionality. Focused on modular code structure, DOM manipulation, and optimized performance for smooth user interaction.",
-    tags: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "CRUD Operations",
-      "Local Storage",
-      "DOM Manipulation",
-      "Responsive Design",
-    ],
-    link: "https://incom-expense-calculatore.netlify.app/",
-    github:
-      "https://github.com/Shiakh0112/GUVI-class-assignment-3-Incom-Expense-Calculatore",
-    img: incom4,
-    detailImg: incom4,
-    startDate: "Jan 2024",
-    endDate: "Jan 2024",
-    language: "JavaScript",
-  },
-  {
-    id: 5,
-    category: "frontend",
-    title: "Add to Cart Product App (React + Modal)",
-    desc: "• Developed a dynamic e-commerce product interface using ReactJS with API integration.\n• Fetched real-time product data from Fake Store API and rendered it dynamically on the UI.\n• Implemented reusable React components for product listing, navbar, and cart modal.\n• Designed a responsive product grid layout using Tailwind CSS for better user experience.\n• Built Add to Cart functionality with state management to track selected items.\n• Implemented duplicate product prevention logic with alert notification system.\n• Created a cart modal popup that displays all selected items with full details.\n• Added Remove from Cart functionality allowing users to manage cart items efficiently.\n• Displayed live cart count in the navbar that updates instantly on user actions.\n• Used props to pass data between components ensuring clean component architecture.\n• Maintained proper state synchronization between UI and cart data.\n• Ensured smooth user interaction with real-time updates and modal transitions.\n• Built fully responsive UI compatible with mobile, tablet, and desktop screens.\n• Followed clean coding practices with modular structure and readable code.",
-    tags: ["React", "JavaScript", "Tailwind CSS", "API", "react-router"],
-    link: "https://productpag.netlify.app/",
-    github:
-      "https://github.com/Shiakh0112/assignment-4-e-comporiduct-page-GOVI",
-    img: product5,
-    detailImg: product5,
-    startDate: "Jan 2024",
-    endDate: "Jan 2024",
-    language: "JavaScript",
-  },
-  {
-    id: 6,
-    category: "frontend",
-    title: "E-Commerce Cart App with Routing",
-    desc: "• Built a multi-page e-commerce application using ReactJS with proper routing implementation.\n• Integrated Fake Store API to fetch and display real-time product data dynamically.\n• Designed separate Product and Cart pages using React Router for smooth navigation.\n• Developed a responsive product listing page showing image, title, price, and description.\n• Implemented Add to Cart and Remove from Cart functionality with dynamic state management.\n• Added conditional rendering to toggle between 'Add to Cart' and 'Remove from Cart' buttons.\n• Created a dedicated Cart page displaying selected products with quantity controls.\n• Implemented Increase/Decrease quantity feature for each cart item.\n• Calculated total price dynamically based on product quantity.\n• Applied 10% discount on the final cart value with real-time updates.\n• Displayed individual item totals and overall cart summary for better user experience.\n• Ensured state synchronization across components using props and React state.\n• Designed clean and modern UI using Tailwind CSS for responsiveness across all devices.\n• Implemented smooth navigation between pages without reload using React Router.\n• Followed modular and scalable component-based architecture for maintainability.\n• Maintained clean, readable, and well-structured codebase.",
-    tags: ["React", "React Router", "JavaScript", "Tailwind CSS", "API"],
-    link: "https://product-routing-base-app.netlify.app/contact",
-    github:
-      "https://github.com/Shiakh0112/Add-to-Cart-Task-Using-Router_GUVI_Assignment",
-    img: router6,
-    detailImg: router6,
-    startDate: "Jan 2024",
-    endDate: "Jan 2024",
-    language: "JavaScript",
-  },
-  {
-    id: 7,
-    category: "frontend",
     title: "Movie Search App (OMDB API)",
-    desc: "• Developed a full-featured movie search application using ReactJS with external API integration.\n• Integrated OMDB API to fetch real-time movie data including search results and detailed information.\n• Implemented a dynamic search bar allowing users to search movies by title or keywords.\n• Displayed search results in a responsive grid layout with movie posters, titles, and basic details.\n• Built pagination system to efficiently handle large sets of movie results.\n• Created a dedicated movie details page with complete information including poster, release year, genre, plot, ratings, and cast.\n• Implemented React Router for smooth navigation between search page and movie detail page.\n• Added dropdown filter using API query parameters (without using array.filter) for optimized performance.\n• Handled API errors gracefully with user-friendly error messages.\n• Managed edge cases such as no results found and invalid search queries.\n• Ensured responsive design using Tailwind CSS for seamless experience across devices.\n• Followed modular component-based architecture for better scalability and maintainability.\n• Maintained clean, readable, and well-structured codebase with proper separation of concerns.",
-    tags: ["React", "React Router", "JavaScript", "Tailwind CSS", "API"],
+    desc: "• Developed a full-featured movie search application using ReactJS with external API integration.\n• Integrated OMDB API to fetch real-time movie data including search results and detailed information.\n• Implemented a dynamic search bar allowing users to search movies by title or keywords.\n• Displayed search results in a responsive grid layout with movie posters, titles, and basic details.\n• Built pagination system to efficiently handle large sets of movie results.\n• Created a dedicated movie details page with complete information including poster, release year, genre, plot, ratings, and cast.\n• Implemented React Router for smooth navigation between search page and movie detail page.\n• Added dropdown filter using API query parameters for optimized performance.\n• Handled API errors gracefully with user-friendly error messages.\n• Ensured responsive design using Tailwind CSS for seamless experience across devices.",
+    tags: ["React", "React Router", "JavaScript", "Tailwind CSS", "OMDB API"],
     link: "https://soft-kulfi-0a4286.netlify.app/",
     github: "https://github.com/Shiakh0112/Movie-Searching-app",
     img: movie7,
@@ -150,10 +38,10 @@ export const allProjects = [
     language: "JavaScript",
   },
   {
-    id: 8,
+    id: 2,
     category: "backend",
-    title: "User Authentication & Authorization (JWT + Bearer Token)",
-    desc: "• Developed a secure authentication and authorization system using Node.js and Express.js.\n• Implemented MVC architecture (Model-View-Controller) for scalable and maintainable backend structure.\n• Integrated MongoDB using Mongoose for efficient user data storage and management.\n• Created User model with schema validation for fields like username, email, and password.\n• Built user registration API with proper input validation and error handling.\n• Implemented password hashing using bcrypt to ensure secure storage of user credentials.\n• Developed login API with credential verification and authentication flow.\n• Generated JSON Web Token (JWT) upon successful login for secure session handling.\n• Implemented Bearer Token authentication system for protected routes.\n• Created middleware to verify JWT from request headers and authorize users.\n• Decoded token to extract user information and attached it to request object.\n• Built protected API endpoint to fetch authenticated user data securely.\n• Documented all API endpoints using Postman with sample requests and responses.\n• Implemented robust error handling for invalid tokens, unauthorized access, and validation failures.\n• Deployed backend server on Render for live API access.\n• Maintained clean, modular, and well-documented code following best practices.",
+    title: "User Authentication & Authorization (JWT)",
+    desc: "• Developed a secure authentication and authorization system using Node.js and Express.js.\n• Implemented MVC architecture for scalable and maintainable backend structure.\n• Integrated MongoDB using Mongoose for efficient user data storage and management.\n• Implemented password hashing using bcrypt to ensure secure storage of user credentials.\n• Generated JSON Web Token (JWT) upon successful login for secure session handling.\n• Implemented Bearer Token authentication system for protected routes.\n• Created middleware to verify JWT from request headers and authorize users.\n• Documented all API endpoints using Postman with sample requests and responses.\n• Deployed backend server on Render for live API access.",
     tags: [
       "Node.js",
       "Express",
@@ -168,13 +56,13 @@ export const allProjects = [
     detailImg: authenticaiondetail8,
     startDate: "Jan 2024",
     endDate: "Jan 2024",
-    language: "JavaScript , node.js",
+    language: "Node.js",
   },
   {
-    id: 9,
+    id: 3,
     category: "fullstack",
     title: "Password Reset Flow Authentication System",
-    desc: "• Developed a complete full-stack authentication system with secure password reset functionality.\n• Built frontend using ReactJS with modern UI/UX and responsive design using Tailwind CSS.\n• Implemented user signup and login system with real-time form validation.\n• Integrated JWT-based authentication for secure user sessions.\n• Created protected routes ensuring only authenticated users can access profile data.\n• Designed and implemented 'Forgot Password' flow with email verification.\n• Generated secure reset tokens using crypto and implemented token expiry (1 hour).\n• Integrated Brevo email service to send password reset links dynamically.\n• Built Reset Password page with token validation and secure password update functionality.\n• Implemented password hashing using bcrypt for enhanced security.\n• Ensured tokens are single-use and cleared after successful password reset.\n• Developed RESTful APIs using Node.js and Express.js following MVC architecture.\n• Integrated MongoDB using Mongoose for efficient data storage and schema management.\n• Handled edge cases like invalid/expired tokens and non-existent users.\n• Added loading states, alerts, and error handling for better user experience.\n• Implemented clean component structure and reusable UI components.\n• Deployed frontend on Vercel and backend on Render for live production access.\n• Maintained well-structured, scalable, and production-ready codebase.",
+    desc: "• Developed a complete full-stack authentication system with secure password reset functionality.\n• Built frontend using ReactJS with modern UI/UX and responsive design using Tailwind CSS.\n• Implemented user signup and login system with real-time form validation.\n• Integrated JWT-based authentication for secure user sessions.\n• Designed and implemented 'Forgot Password' flow with email verification.\n• Generated secure reset tokens using crypto and implemented token expiry (1 hour).\n• Integrated Brevo email service to send password reset links dynamically.\n• Built Reset Password page with token validation and secure password update functionality.\n• Deployed frontend on Vercel and backend on Render for live production access.",
     tags: [
       "React",
       "Node.js",
@@ -193,10 +81,10 @@ export const allProjects = [
     language: "JavaScript",
   },
   {
-    id: 10,
+    id: 4,
     category: "backend",
     title: "Recipes CRUD API",
-    desc: "Developed a complete RESTful Recipes API using Node.js, Express.js, and MongoDB following the MVC architecture pattern. Implemented full CRUD operations including creating new recipes, retrieving all recipes, fetching individual recipes by ID, updating existing recipes, and deleting recipes. Integrated MongoDB with Mongoose for efficient data modeling and database interaction. Ensured proper validation and structured error handling for all API endpoints. Designed scalable and maintainable code by separating concerns into models, controllers, and routes. Documented all endpoints using Postman with sample requests and responses for easy testing and developer understanding. The API is fully deployed and can be used as a backend service for any recipe management application.",
+    desc: "Developed a complete RESTful Recipes API using Node.js, Express.js, and MongoDB following the MVC architecture pattern. Implemented full CRUD operations including creating new recipes, retrieving all recipes, fetching individual recipes by ID, updating existing recipes, and deleting recipes. Integrated MongoDB with Mongoose for efficient data modeling and database interaction. Ensured proper validation and structured error handling for all API endpoints. Designed scalable and maintainable code by separating concerns into models, controllers, and routes. Documented all endpoints using Postman with sample requests and responses for easy testing and developer understanding.",
     tags: [
       "Node.js",
       "Express.js",
@@ -307,26 +195,87 @@ export const bestProjects = [
   {
     id: "b5",
     category: "fullstack",
-    title: "CityGuard — Smart City Crime & Emergency Management Dashboard",
-    desc: "• Developed a modern Smart City Command Center Dashboard for managing real-time incidents, officers, analytics, and emergency operations.\n• Built a complete incident management system with CRUD operations, status updates, severity filtering, and real-time alert generation.\n• Designed officer management module with dynamic card UI, zone-based filtering, profile view, and status updates.\n• Implemented detailed officer profile pages with assigned cases tracking and performance analytics.\n• Integrated Redux Toolkit for centralized state management of incidents, officers, alerts, and user profile.\n• Created advanced analytics dashboard using Recharts including line, bar, radar, and hourly distribution charts.\n• Built interactive crime heatmap visualization to represent zone-wise crime density using dynamic grid system.\n• Developed real-time notification system with unread tracking, alert types, and dropdown interaction.\n• Implemented global search functionality across incidents and officers with dynamic navigation.\n• Designed settings panel with dark/light mode, preferences, and localStorage persistence using custom hooks.\n• Integrated external API (Open-Meteo) using Axios to display real-time weather data with fallback handling.\n• Developed responsive UI using Tailwind CSS with custom design system and reusable components.\n• Implemented React Router for multi-page navigation with protected and dynamic routes.\n• Built reusable components and modular architecture for scalability and maintainability.\n• Ensured smooth UX with animations, live clock, theme switching, and optimized performance.\n• Followed clean code practices with proper folder structure, separation of concerns, and maintainable codebase.",
+    title: "TaskFlow — SaaS Project Management Platform",
+    desc: "Developed a production-ready full-stack SaaS Project Management application inspired by modern tools like Notion and Trello using the MERN stack. Implemented secure authentication with JWT access and refresh token rotation, OTP-based email verification using Brevo SMTP, and Google OAuth 2.0 integration. Built a scalable and modular backend architecture following MVC pattern with Express.js, MongoDB, and Mongoose, ensuring maintainability and performance. Designed real-time collaboration features using Socket.io, enabling live task updates, notifications, typing indicators, and user presence tracking. Created dynamic Kanban boards with drag-and-drop functionality for task management, including lists, priorities, due dates, labels, checklists, and file attachments. Integrated Stripe payment gateway for subscription-based plans (Free, Pro, Enterprise) with secure payment verification and billing history tracking. Developed role-based access control (RBAC) for team collaboration with roles such as owner, admin, member, and viewer. Implemented Cloudinary for scalable file uploads and optimized asset management. Applied advanced security practices including bcrypt password hashing, rate limiting, Helmet headers, CORS protection, and input validation with Joi. Built a fully responsive UI using React, Redux Toolkit, Tailwind CSS, and modern UX patterns including dark mode, toast notifications, and optimized state management. Ensured high performance with efficient API handling, token auto-refresh mechanisms, and clean code architecture suitable for production deployment.",
     tags: [
-      "React",
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
       "Redux Toolkit",
-      "React Router",
+      "Socket.io",
+      "Stripe API",
+      "JWT Authentication",
+      "OAuth 2.0",
+      "Cloudinary",
       "Tailwind CSS",
-      "Recharts",
-      "Axios",
-      "JavaScript",
+      "MERN Stack",
+      "REST API",
+      "Real-Time Applications",
+      "SaaS Architecture",
+      "RBAC",
+      "WebSockets",
+      "Scalable Systems",
     ],
-    link: "https://city-guard-dashboard.vercel.app/",
-    github: "https://github.com/Shiakh0112/City-Guard-dashboard",
-    img: dashboard5,
-    detailImg: dashboard5,
+    link: "https://saa-s-project-management-app-cigz.vercel.app",
+    github: "https://github.com/Shiakh0112/SaaS-Project-Management-App",
+    img: ProjectManagement11,
+    detailImg: ProjectManagementDetail11,
     startDate: "Mar 2024",
-    endDate: "Mar 2024",
+    endDate: "Apr 2024",
     language: "JavaScript",
   },
-  ,
+
+  {
+    id: "b6",
+    category: "fullstack",
+    title: "City Guard — Police Command Dashboard",
+    desc: "Developed a scalable full-stack Police Command Dashboard using the MERN stack (MongoDB, Express.js, React.js, Node.js) to manage real-time law enforcement operations. Implemented secure JWT-based authentication with role-based access control (Admin, Officer, Viewer) to ensure system security and data integrity. Built complete incident and officer management modules with full CRUD functionality, advanced filtering, and real-time status updates. Designed an interactive analytics dashboard with charts, crime trends, zone-based heatmaps, and data visualization using Recharts. Integrated global search, live notifications system, and weather API for enhanced situational awareness. Developed protected routes and middleware-based authorization for secure API access. Implemented Redux Toolkit for efficient state management and Axios interceptors for handling API requests and authentication flow. Created a responsive and modern UI with Tailwind CSS, including dark/light mode and mobile-first design. Followed modular architecture, RESTful API design, and best practices to ensure scalability, maintainability, and performance.",
+    tags: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "Redux Toolkit",
+      "JWT Authentication",
+      "Role-Based Access Control",
+      "REST API",
+      "Full Stack Development",
+      "Dashboard",
+      "Data Visualization",
+      "Recharts",
+      "Tailwind CSS",
+      "Axios",
+      "MERN Stack",
+      "Protected Routes",
+    ],
+    link: "https://city-guard-police-command-center-da.vercel.app",
+    github:
+      "https://github.com/Shiakh0112/City-Guard-Police-Command-center-Dashboard",
+    img: cityguard1,
+    detailImg: cityguardDetail1,
+    startDate: "Mar 2024",
+    endDate: "Apr 2024",
+    language: "JavaScript",
+  },
+];
+
+// ── Certifications ───────────────────────────────────────────────────
+export const certifications = [
+  {
+    id: 1,
+    title: "Full Stack Development",
+    issuer: "GUVI Geek Network Private Limited",
+    issuedBy: "Arun Prakash, Founder & CEO",
+    date: "31st January 2026",
+    grade: "A",
+    studentId: "CAN_38591677",
+    certificateId: "gy8sr5er3rshe7e8",
+    partners: "HCL | Skill India | NSDC",
+    credentialUrl: "https://drive.google.com/file/d/1pPUVFdMPdlhkZG-5DDtSI3semFmn2Vom/view",
+    desc: "Successfully completed the Full Stack Development course with Grade A from GUVI Geek Network Private Limited, in association with HCL, Skill India & NSDC. Covered MongoDB, Express.js, React.js, Node.js, JWT, REST APIs, and deployment.",
+    tags: ["MongoDB", "Express.js", "React.js", "Node.js", "Full Stack", "HCL", "Skill India", "NSDC"],
+  },
 ];
 
 // ── Education ─────────────────────────────────────────────────────────

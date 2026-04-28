@@ -357,52 +357,96 @@ function DesktopPinned() {
               >
                 ✦ Project {String(p.id).padStart(2, "00")}
               </span>
-              <h3
-                style={{
-                  fontFamily: '"Playfair Display", serif',
-                  fontSize: "26px",
-                  fontWeight: 700,
-                  color: "var(--text-white)",
-                  lineHeight: 1.2,
-                  margin: 0,
-                }}
-              >
-                {p.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: "13px",
-                  color: "var(--text-gray)",
-                  lineHeight: 1.8,
-                  margin: 0,
-                }}
-              >
-                {p.desc.slice(0, 150)}...
-              </p>
-              <Link
-                to={`/best-project/${p.id}`}
-                className="inline-block self-start"
-                style={{
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: "2px",
-                  color: "var(--primary-dark)",
-                  background: "var(--accent-light-gold)",
-                  padding: "10px 24px",
-                  transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "#fff";
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "var(--accent-light-gold)";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                View Project →
-              </Link>
+              <div className="flex items-center justify-between">
+                <h3
+                  style={{
+                    fontFamily: '"Playfair Display", serif',
+                    fontSize: "26px",
+                    fontWeight: 700,
+                    color: "var(--text-white)",
+                    lineHeight: 1.2,
+                    margin: 0,
+                  }}
+                >
+                  {p.title}
+                </h3>
+                <Link
+                  to={`/best-project/${p.id}`}
+                  style={{
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "1.5px",
+                    color: "var(--accent-light-gold)",
+                    whiteSpace: "nowrap",
+                    marginLeft: "16px",
+                    transition: "gap 0.3s ease",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.gap = "10px")}
+                  onMouseLeave={(e) => (e.currentTarget.style.gap = "6px")}
+                >
+                  View →
+                </Link>
+              </div>
+              <div className="flex" style={{ gap: "12px" }}>
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block self-start"
+                  style={{
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "2px",
+                    color: "var(--primary-dark)",
+                    background: "var(--accent-light-gold)",
+                    padding: "10px 24px",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#fff";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background =
+                      "var(--accent-light-gold)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
+                >
+                  🔗 Live Demo
+                </a>
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block self-start"
+                  style={{
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "2px",
+                    color: "var(--accent-light-gold)",
+                    background: "transparent",
+                    border: "1px solid rgba(229,197,133,0.4)",
+                    padding: "10px 24px",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(229,197,133,0.1)";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
+                >
+                  ⌥ GitHub
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -481,35 +525,151 @@ function DesktopPinned() {
                 zIndex: i + 1,
               }}
             >
+              {/* 3D flip card - image only */}
               <div
-                className="relative overflow-hidden w-full"
                 style={{
+                  perspective: "800px",
+                  width: "100%",
                   aspectRatio: "16/10",
-                  border: "1px solid rgba(229,197,133,0.2)",
                 }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.querySelector(".bp-cube").style.transform =
+                    "rotateY(180deg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.querySelector(".bp-cube").style.transform =
+                    "rotateY(0deg)")
+                }
               >
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  className="w-full h-full object-cover"
-                  style={{ transition: "transform 0.6s ease" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.04)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")
-                  }
-                />
                 <div
-                  className="absolute inset-0"
+                  className="bp-cube"
                   style={{
-                    background:
-                      "linear-gradient(to top, rgba(15,16,20,0.5) 0%, transparent 50%)",
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                    transformStyle: "preserve-3d",
+                    transition: "transform 0.9s cubic-bezier(0.4,0.2,0.2,1)",
                   }}
-                />
+                >
+                  {/* FRONT — detailImg */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      backfaceVisibility: "hidden",
+                      overflow: "hidden",
+                      border: "1px solid rgba(229,197,133,0.2)",
+                    }}
+                  >
+                    <img
+                      src={p.detailImg}
+                      alt={p.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(to top, rgba(15,16,20,0.5) 0%, transparent 50%)",
+                      }}
+                    />
+                  </div>
+                  {/* BACK — full desc + links */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      transform: "rotateY(180deg)",
+                      backfaceVisibility: "hidden",
+                      background: "#1a1508",
+                      border: "1px solid rgba(229,197,133,0.35)",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      padding: "20px",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        color: "var(--text-gray)",
+                        lineHeight: 1.7,
+                        margin: 0,
+                        overflow: "auto",
+                        flex: 1,
+                      }}
+                    >
+                      {p.desc.slice(0, 600)}...
+                    </p>
+                    <div
+                      className="flex"
+                      style={{
+                        gap: "8px",
+                        marginTop: "12px",
+                        flexShrink: 0,
+                        flexWrap: "wrap",
+                      }}
+                    >
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          fontSize: "9px",
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                          letterSpacing: "1px",
+                          padding: "7px 12px",
+                          background: "var(--accent-light-gold)",
+                          color: "#0f1014",
+                          transition: "all 0.3s ease",
+                          whiteSpace: "nowrap",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.background = "#fff")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.background =
+                            "var(--accent-light-gold)")
+                        }
+                      >
+                        🔗 Live
+                      </a>
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          fontSize: "9px",
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                          letterSpacing: "1px",
+                          padding: "7px 12px",
+                          background: "transparent",
+                          border: "1px solid rgba(229,197,133,0.4)",
+                          color: "var(--accent-light-gold)",
+                          transition: "all 0.3s ease",
+                          whiteSpace: "nowrap",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.background =
+                            "rgba(229,197,133,0.1)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.background = "transparent")
+                        }
+                      >
+                        ⌥ GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              {/* Tags below image - always visible */}
               <div className="flex flex-wrap" style={{ gap: "8px" }}>
-                {p.tags.map((tag) => (
+                {p.tags.slice(0, 14).map((tag) => (
                   <span
                     key={tag}
                     style={{

@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SocialSidebar from "./components/SocialSidebar";
 import ProjectDetail from "./components/ProjectDetail";
+import Certifications from "./components/Certifications";
 import "./index.css";
 
 function Home() {
@@ -38,6 +39,7 @@ function Home() {
       <BestProjects />
       <Projects />
       <Education />
+      <Certifications />
       <Contact />
       <SocialSidebar />
       <Footer />

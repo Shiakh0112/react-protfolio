@@ -5,12 +5,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const navLinks = [
-  { label: 'Home',      href: '#hero'      },
-  { label: 'About',     href: '#about'     },
-  { label: 'Projects',  href: '#projects'  },
-  { label: 'Skills',    href: '#skills'    },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact',   href: '#contact'   },
+  { label: 'Home',           href: '#hero'           },
+  { label: 'About',          href: '#about'          },
+  { label: 'Projects',       href: '#projects'       },
+  { label: 'Skills',         href: '#skills'         },
+  { label: 'Education',      href: '#education'      },
+  { label: 'Certifications', href: '#certifications' },
+  { label: 'Contact',        href: '#contact'        },
 ]
 
 const socials = [
