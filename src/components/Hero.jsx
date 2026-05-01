@@ -218,8 +218,7 @@ export default function Hero() {
             user-friendly digital products from frontend to backend.
           </p>
 
-          <div className="flex items-center flex-wrap" style={{ gap: '16px' }}>
-            {/* About Me button - magnetic */}
+          <div className="flex items-center flex-wrap" style={{ gap: "16px" }}>
             <div
               className="inline-block"
               onMouseMove={onBtnMove}
@@ -235,9 +234,28 @@ export default function Hero() {
             >
               <a
                 ref={btnRef}
-                href="/resume.pdf"
-                download
+                href="https://drive.google.com/uc?export=download&id=1Jclwy-gtI_y_2dkmErnd5klp7p1Tlrwt"
+                target="_blank"
+                rel="noreferrer"
                 className="hero-btn inline-block relative overflow-hidden"
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  const fileId = "1Jclwy-gtI_y_2dkmErnd5klp7p1Tlrwt";
+
+                  // Open preview
+                  window.open(
+                    `https://drive.google.com/file/d/${fileId}/view`,
+                    "_blank",
+                  );
+
+                  // Trigger download
+                  const link = document.createElement("a");
+                  link.href = `https://drive.google.com/uc?export=download&id=${fileId}`;
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 style={{
                   padding: "15px 35px",
                   backgroundColor: "var(--accent-light-gold)",
@@ -257,34 +275,15 @@ export default function Hero() {
                     animation: "btnShimmer 3s infinite",
                   }}
                 />
-                <span ref={btnTextRef} className="relative" style={{ zIndex: 1 }}>
+                <span
+                  ref={btnTextRef}
+                  className="relative"
+                  style={{ zIndex: 1 }}
+                >
                   ↓ Download Resume
                 </span>
               </a>
             </div>
-
-            {/* Download Resume button */}
-            <a
-              href="/resume.pdf"
-              download
-              className="hero-btn inline-block relative overflow-hidden"
-              style={{
-                padding: "15px 35px",
-                backgroundColor: "transparent",
-                border: "1px solid var(--accent-light-gold)",
-                color: "var(--accent-light-gold)",
-                fontSize: "13px",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                textDecoration: "none",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.backgroundColor = "var(--accent-light-gold)"; e.currentTarget.style.color = "var(--primary-black)" }}
-              onMouseLeave={e => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "var(--accent-light-gold)" }}
-            >
-              ↓ Download Resume
-            </a>
           </div>
         </div>
 
