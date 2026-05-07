@@ -234,28 +234,10 @@ export default function Hero() {
             >
               <a
                 ref={btnRef}
-                href="https://drive.google.com/uc?export=download&id=1Jclwy-gtI_y_2dkmErnd5klp7p1Tlrwt"
+                href="https://drive.google.com/file/d/1IxQnSN2uiDYBe3xeKLMwu4b_FCEKZpJI/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 className="hero-btn inline-block relative overflow-hidden"
-                onClick={(e) => {
-                  e.preventDefault();
-
-                  const fileId = "1Jclwy-gtI_y_2dkmErnd5klp7p1Tlrwt";
-
-                  // Open preview
-                  window.open(
-                    `https://drive.google.com/file/d/${fileId}/view`,
-                    "_blank",
-                  );
-
-                  // Trigger download
-                  const link = document.createElement("a");
-                  link.href = `https://drive.google.com/uc?export=download&id=${fileId}`;
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
                 style={{
                   padding: "15px 35px",
                   backgroundColor: "var(--accent-light-gold)",
