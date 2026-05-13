@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { certifications } from '../assets/data'
+import { certifications, extraCertifications } from '../assets/data'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -102,6 +102,47 @@ export default function Certifications() {
             >Verify Certificate →</a>
           </div>
         ))}
+      </div>
+
+      {/* Extra Certificate Image Cards */}
+      <div className="mx-auto" style={{ maxWidth: '1100px', marginTop: '60px' }}>
+        <p className="text-center" style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '3px', color: 'rgba(229,197,133,0.4)', marginBottom: '32px' }}>✦ Course Completion Certificates</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+          {extraCertifications.map((cert) => (
+            <div key={cert.id} className="cert-card relative overflow-hidden" style={{
+              background: 'rgba(255,255,255,0.02)',
+              border: '1px solid rgba(229,197,133,0.15)',
+              transition: 'border-color 0.3s ease, transform 0.3s ease',
+            }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(229,197,133,0.4)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(229,197,133,0.15)'; e.currentTarget.style.transform = 'translateY(0)' }}
+            >
+              {/* certificate image */}
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
+                <img src={cert.img} alt={cert.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                />
+              </div>
+              {/* card details */}
+              <div style={{ padding: '16px 18px' }}>
+                <h4 style={{ fontFamily: '"Playfair Display", serif', fontSize: '15px', fontWeight: 700, color: 'var(--text-white)', margin: '0 0 4px' }}>{cert.title}</h4>
+                <p style={{ fontSize: '11px', color: 'var(--accent-light-gold-text)', margin: '0 0 4px', fontWeight: 600 }}>{cert.issuer}</p>
+                <p style={{ fontSize: '10px', color: 'var(--text-gray)', margin: '0 0 4px' }}>{cert.course}</p>
+                {cert.duration && <p style={{ fontSize: '10px', color: 'var(--text-gray)', margin: '0 0 8px' }}>{cert.duration}</p>}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                  <span style={{ fontSize: '10px', color: 'rgba(229,197,133,0.5)', letterSpacing: '1px' }}>{cert.partners}</span>
+                  <span style={{ fontSize: '10px', color: 'var(--text-gray)' }}>{cert.date}</span>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                  {cert.tags.map(tag => (
+                    <span key={tag} style={{ fontSize: '8px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', padding: '3px 8px', background: 'rgba(229,197,133,0.07)', border: '1px solid rgba(229,197,133,0.2)', color: 'var(--accent-light-gold)' }}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* bottom line */}

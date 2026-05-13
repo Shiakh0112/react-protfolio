@@ -259,21 +259,92 @@ export const bestProjects = [
   },
 ];
 
-// ── Certifications ───────────────────────────────────────────────────
+// certificate images
+import cert1 from "./certificates/GuviCertification - MQ8W3IUFkX3t71jI.png";
+import cert2 from "./certificates/GuviCertification - Tt9UEUuRIzoZ1neA.png";
+import cert3 from "./certificates/GuviCertification - mj3a2oCKpMpmK8np.png";
+import cert4 from "./certificates/GuviCertification - S5AYDqLDhnQe6fmM.png";
+import cert5 from "./certificates/GuviCertification - 7Us98DjNyNQELrm2.png";
+import cert6 from "./certificates/GuviCertification - 9mpbkVWGGnQ08WcK (1).png";
+
+// ── Certifications ───────────────────────────────────────────
 export const certifications = [
   {
     id: 1,
     title: "Full Stack Development",
     issuer: "GUVI Geek Network Private Limited",
-    issuedBy: "Arun Prakash, Founder & CEO",
     date: "31st January 2026",
     grade: "A",
     studentId: "CAN_38591677",
-    certificateId: "gy8sr5er3rshe7e8",
     partners: "HCL | Skill India | NSDC",
     credentialUrl: "https://drive.google.com/file/d/1pPUVFdMPdlhkZG-5DDtSI3semFmn2Vom/view",
-    desc: "Successfully completed the Full Stack Development course with Grade A from GUVI Geek Network Private Limited, in association with HCL, Skill India & NSDC. Covered MongoDB, Express.js, React.js, Node.js, JWT, REST APIs, and deployment.",
-    tags: ["MongoDB", "Express.js", "React.js", "Node.js", "Full Stack", "HCL", "Skill India", "NSDC"],
+    desc: "Successfully completed Full Stack Development with Grade A from GUVI Geek Network, in association with HCL, Skill India & NSDC. Covered MongoDB, Express.js, React.js, Node.js, JWT, REST APIs, and deployment.",
+    tags: ["MongoDB", "Express.js", "React.js", "Node.js", "Full Stack", "HCL"],
+  },
+];
+
+// ── Extra Certifications (image cards) ───────────────────────────
+export const extraCertifications = [
+  {
+    id: 1,
+    title: "HTML, CSS & Tailwind CSS",
+    course: "Full Stack Development Programme — Zen Class",
+    issuer: "GUVI Geek Network",
+    partners: "HCL | IITM | Google for Education",
+    date: "January 19, 2026",
+    img: cert1,
+    tags: ["HTML", "CSS", "Tailwind CSS"],
+  },
+  {
+    id: 2,
+    title: "IIT-M Pravartak Full Stack with AI Tools",
+    course: "IIT-M Pravartak Certified Full Stack Development Course With AI Tools",
+    issuer: "GUVI Geek Network",
+    partners: "IIT-M Pravartak | IITM | Google for Education",
+    date: "January 19, 2026",
+    duration: "May 2025 – November 2025",
+    img: cert2,
+    tags: ["Full Stack", "AI Tools", "IIT-M", "Pravartak"],
+  },
+  {
+    id: 3,
+    title: "JS Basics",
+    course: "Full Stack Development Programme — Zen Class",
+    issuer: "GUVI Geek Network",
+    partners: "HCL | IITM | Google for Education",
+    date: "January 19, 2026",
+    img: cert3,
+    tags: ["JavaScript", "JS Basics", "Frontend"],
+  },
+  {
+    id: 4,
+    title: "JS Basics (Advanced)",
+    course: "Full Stack Development Programme — Zen Class",
+    issuer: "GUVI Geek Network",
+    partners: "HCL | IITM | Google for Education",
+    date: "January 19, 2026",
+    img: cert4,
+    tags: ["JavaScript", "JS Basics", "Frontend"],
+  },
+  {
+    id: 5,
+    title: "Node.js",
+    course: "Full Stack Development Programme — Zen Class",
+    issuer: "GUVI Geek Network",
+    partners: "HCL | IITM | Google for Education",
+    date: "January 19, 2026",
+    img: cert5,
+    tags: ["Node.js", "Backend", "Server"],
+  },
+  {
+    id: 6,
+    title: "ReactJS",
+    course: "Full Stack Development Programme — Zen Class",
+    issuer: "GUVI Geek Network",
+    partners: "HCL | IITM | Google for Education",
+    date: "January 19, 2026",
+    img: cert6,
+    tags: ["React.js", "Frontend", "UI"],
   },
 ];
 
