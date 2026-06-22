@@ -132,14 +132,39 @@ export default function ProjectDetail() {
             onMouseEnter={e => e.currentTarget.style.background = '#fff'}
             onMouseLeave={e => e.currentTarget.style.background = 'var(--accent-light-gold)'}
           >🔗 Live Demo</a>
-          <a href={p.github} target="_blank" rel="noreferrer" style={{
-            fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px',
-            padding: '12px 28px', background: 'transparent', border: '1px solid rgba(229,197,133,0.4)',
-            color: 'var(--accent-light-gold)', transition: 'all 0.3s ease', display: 'inline-block',
-          }}
-            onMouseEnter={e => e.currentTarget.style.background = 'rgba(229,197,133,0.1)'}
-            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-          >⌥ GitHub Repo</a>
+
+          {p.githubFrontend && (
+            <a href={p.githubFrontend} target="_blank" rel="noreferrer" style={{
+              fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px',
+              padding: '12px 28px', background: 'transparent', border: '1px solid rgba(229,197,133,0.4)',
+              color: 'var(--accent-light-gold)', transition: 'all 0.3s ease', display: 'inline-block',
+            }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(229,197,133,0.1)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+            >⌥ Frontend Repo</a>
+          )}
+
+          {p.githubBackend && p.githubBackend !== p.githubFrontend && (
+            <a href={p.githubBackend} target="_blank" rel="noreferrer" style={{
+              fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px',
+              padding: '12px 28px', background: 'transparent', border: '1px solid rgba(229,197,133,0.4)',
+              color: 'var(--accent-light-gold)', transition: 'all 0.3s ease', display: 'inline-block',
+            }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(229,197,133,0.1)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+            >⌥ Backend Repo</a>
+          )}
+
+          {!p.githubFrontend && !p.githubBackend && p.github && (
+            <a href={p.github} target="_blank" rel="noreferrer" style={{
+              fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px',
+              padding: '12px 28px', background: 'transparent', border: '1px solid rgba(229,197,133,0.4)',
+              color: 'var(--accent-light-gold)', transition: 'all 0.3s ease', display: 'inline-block',
+            }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(229,197,133,0.1)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+            >⌥ GitHub Repo</a>
+          )}
         </div>
       </div>
     </div>

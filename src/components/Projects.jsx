@@ -165,23 +165,50 @@ export default function Projects() {
               </div>
 
               {/* Card bottom */}
-              <div className="flex justify-between items-center mt-auto" style={{
+              <div className="flex flex-col mt-auto" style={{
                 padding: '16px 18px 18px',
                 borderTop: '1px solid rgba(229,197,133,0.1)',
+                gap: '10px',
               }}>
-                <h3 style={{
-                  fontFamily: '"Playfair Display", serif', fontSize: '16px',
-                  fontWeight: 700, color: 'var(--text-white)',
-                  margin: 0, flex: 1, paddingRight: '12px',
-                }}>{p.title.length > 27 ? p.title.slice(0, 27) + '...' : p.title}</h3>
-                <Link to={`/project/${p.id}`} className="inline-flex items-center whitespace-nowrap" style={{
-                  fontSize: '11px', fontWeight: 700, textTransform: 'uppercase',
-                  letterSpacing: '1.5px', color: 'var(--accent-light-gold)',
-                  gap: '6px', transition: 'gap 0.3s ease',
-                }}
-                  onMouseEnter={e => e.currentTarget.style.gap = '12px'}
-                  onMouseLeave={e => e.currentTarget.style.gap = '6px'}
-                >View <span>→</span></Link>
+                <div className="flex justify-between items-center">
+                  <h3 style={{
+                    fontFamily: '"Playfair Display", serif', fontSize: '16px',
+                    fontWeight: 700, color: 'var(--text-white)',
+                    margin: 0, flex: 1, paddingRight: '12px',
+                  }}>{p.title.length > 27 ? p.title.slice(0, 27) + '...' : p.title}</h3>
+                  <Link to={`/project/${p.id}`} className="inline-flex items-center whitespace-nowrap" style={{
+                    fontSize: '11px', fontWeight: 700, textTransform: 'uppercase',
+                    letterSpacing: '1.5px', color: 'var(--accent-light-gold)',
+                    gap: '6px', transition: 'gap 0.3s ease',
+                  }}
+                    onMouseEnter={e => e.currentTarget.style.gap = '12px'}
+                    onMouseLeave={e => e.currentTarget.style.gap = '6px'}
+                  >View <span>→</span></Link>
+                </div>
+                <div className="flex flex-wrap" style={{ gap: '8px' }}>
+                  <a href={p.link} target="_blank" rel="noreferrer" style={{ fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', padding: '4px 10px', background: 'var(--accent-light-gold)', color: '#0f1014', transition: 'all 0.3s', whiteSpace: 'nowrap' }}
+                    onMouseEnter={e => e.currentTarget.style.background = '#fff'}
+                    onMouseLeave={e => e.currentTarget.style.background = 'var(--accent-light-gold)'}
+                  >🔗 Live</a>
+                  {p.githubFrontend && (
+                    <a href={p.githubFrontend} target="_blank" rel="noreferrer" style={{ fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', padding: '4px 10px', background: 'transparent', border: '1px solid rgba(229,197,133,0.35)', color: 'var(--accent-light-gold)', transition: 'all 0.3s', whiteSpace: 'nowrap' }}
+                      onMouseEnter={e => e.currentTarget.style.background = 'rgba(229,197,133,0.1)'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                    >⌥ Frontend</a>
+                  )}
+                  {p.githubBackend && (
+                    <a href={p.githubBackend} target="_blank" rel="noreferrer" style={{ fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', padding: '4px 10px', background: 'transparent', border: '1px solid rgba(229,197,133,0.35)', color: 'var(--accent-light-gold)', transition: 'all 0.3s', whiteSpace: 'nowrap' }}
+                      onMouseEnter={e => e.currentTarget.style.background = 'rgba(229,197,133,0.1)'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                    >⌥ Backend</a>
+                  )}
+                  {!p.githubFrontend && !p.githubBackend && p.github && (
+                    <a href={p.github} target="_blank" rel="noreferrer" style={{ fontSize: '9px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', padding: '4px 10px', background: 'transparent', border: '1px solid rgba(229,197,133,0.35)', color: 'var(--accent-light-gold)', transition: 'all 0.3s', whiteSpace: 'nowrap' }}
+                      onMouseEnter={e => e.currentTarget.style.background = 'rgba(229,197,133,0.1)'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                    >⌥ GitHub</a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

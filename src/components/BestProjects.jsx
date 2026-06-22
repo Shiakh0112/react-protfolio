@@ -391,61 +391,33 @@ function DesktopPinned() {
                   View →
                 </Link>
               </div>
-              <div className="flex" style={{ gap: "12px" }}>
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block self-start"
-                  style={{
-                    fontSize: "11px",
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: "2px",
-                    color: "var(--primary-dark)",
-                    background: "var(--accent-light-gold)",
-                    padding: "10px 24px",
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#fff";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background =
-                      "var(--accent-light-gold)";
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
-                >
-                  🔗 Live Demo
-                </a>
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block self-start"
-                  style={{
-                    fontSize: "11px",
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: "2px",
-                    color: "var(--accent-light-gold)",
-                    background: "transparent",
-                    border: "1px solid rgba(229,197,133,0.4)",
-                    padding: "10px 24px",
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(229,197,133,0.1)";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
-                >
-                  ⌥ GitHub
-                </a>
+              <div className="flex" style={{ gap: "10px", flexWrap: "wrap" }}>
+                <a href={p.link} target="_blank" rel="noreferrer" className="inline-block self-start"
+                  style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", color: "var(--primary-dark)", background: "var(--accent-light-gold)", padding: "10px 20px", transition: "all 0.3s ease" }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.transform = "translateY(-2px)" }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "var(--accent-light-gold)"; e.currentTarget.style.transform = "translateY(0)" }}
+                >🔗 Live</a>
+                  {p.githubFrontend && (
+                    <a href={p.githubFrontend} target="_blank" rel="noreferrer" className="inline-block self-start"
+                      style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", color: "var(--accent-light-gold)", background: "transparent", border: "1px solid rgba(229,197,133,0.4)", padding: "10px 16px", transition: "all 0.3s ease" }}
+                      onMouseEnter={e => { e.currentTarget.style.background = "rgba(229,197,133,0.1)"; e.currentTarget.style.transform = "translateY(-2px)" }}
+                      onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.transform = "translateY(0)" }}
+                    >⌥ Frontend</a>
+                  )}
+                  {p.githubBackend && (
+                    <a href={p.githubBackend} target="_blank" rel="noreferrer" className="inline-block self-start"
+                      style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", color: "var(--accent-light-gold)", background: "transparent", border: "1px solid rgba(229,197,133,0.4)", padding: "10px 16px", transition: "all 0.3s ease" }}
+                      onMouseEnter={e => { e.currentTarget.style.background = "rgba(229,197,133,0.1)"; e.currentTarget.style.transform = "translateY(-2px)" }}
+                      onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.transform = "translateY(0)" }}
+                    >⌥ Backend</a>
+                  )}
+                  {!p.githubFrontend && !p.githubBackend && p.github && (
+                    <a href={p.github} target="_blank" rel="noreferrer" className="inline-block self-start"
+                      style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", color: "var(--accent-light-gold)", background: "transparent", border: "1px solid rgba(229,197,133,0.4)", padding: "10px 20px", transition: "all 0.3s ease" }}
+                      onMouseEnter={e => { e.currentTarget.style.background = "rgba(229,197,133,0.1)"; e.currentTarget.style.transform = "translateY(-2px)" }}
+                      onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.transform = "translateY(0)" }}
+                    >⌥ GitHub</a>
+                  )}
               </div>
             </div>
           ))}
@@ -602,66 +574,33 @@ function DesktopPinned() {
                     >
                       {p.desc.slice(0, 600)}...
                     </p>
-                    <div
-                      className="flex"
-                      style={{
-                        gap: "8px",
-                        marginTop: "12px",
-                        flexShrink: 0,
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      <a
-                        href={p.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                          fontSize: "9px",
-                          fontWeight: 700,
-                          textTransform: "uppercase",
-                          letterSpacing: "1px",
-                          padding: "7px 12px",
-                          background: "var(--accent-light-gold)",
-                          color: "#0f1014",
-                          transition: "all 0.3s ease",
-                          whiteSpace: "nowrap",
-                        }}
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.background = "#fff")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.background =
-                            "var(--accent-light-gold)")
-                        }
-                      >
-                        🔗 Live
-                      </a>
-                      <a
-                        href={p.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                          fontSize: "9px",
-                          fontWeight: 700,
-                          textTransform: "uppercase",
-                          letterSpacing: "1px",
-                          padding: "7px 12px",
-                          background: "transparent",
-                          border: "1px solid rgba(229,197,133,0.4)",
-                          color: "var(--accent-light-gold)",
-                          transition: "all 0.3s ease",
-                          whiteSpace: "nowrap",
-                        }}
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.background =
-                            "rgba(229,197,133,0.1)")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.background = "transparent")
-                        }
-                      >
-                        ⌥ GitHub
-                      </a>
+                    <div className="flex" style={{ gap: "8px", marginTop: "12px", flexShrink: 0, flexWrap: "wrap" }}>
+                      <a href={p.link} target="_blank" rel="noreferrer"
+                        style={{ fontSize: "9px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", padding: "7px 12px", background: "var(--accent-light-gold)", color: "#0f1014", transition: "all 0.3s ease", whiteSpace: "nowrap" }}
+                        onMouseEnter={e => e.currentTarget.style.background = "#fff"}
+                        onMouseLeave={e => e.currentTarget.style.background = "var(--accent-light-gold)"}
+                      >🔗 Live</a>
+                      {p.githubFrontend && (
+                        <a href={p.githubFrontend} target="_blank" rel="noreferrer"
+                          style={{ fontSize: "9px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", padding: "7px 12px", background: "transparent", border: "1px solid rgba(229,197,133,0.4)", color: "var(--accent-light-gold)", transition: "all 0.3s ease", whiteSpace: "nowrap" }}
+                          onMouseEnter={e => e.currentTarget.style.background = "rgba(229,197,133,0.1)"}
+                          onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+                        >⌥ Frontend</a>
+                      )}
+                      {p.githubBackend && (
+                        <a href={p.githubBackend} target="_blank" rel="noreferrer"
+                          style={{ fontSize: "9px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", padding: "7px 12px", background: "transparent", border: "1px solid rgba(229,197,133,0.4)", color: "var(--accent-light-gold)", transition: "all 0.3s ease", whiteSpace: "nowrap" }}
+                          onMouseEnter={e => e.currentTarget.style.background = "rgba(229,197,133,0.1)"}
+                          onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+                        >⌥ Backend</a>
+                      )}
+                      {!p.githubFrontend && !p.githubBackend && p.github && (
+                        <a href={p.github} target="_blank" rel="noreferrer"
+                          style={{ fontSize: "9px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", padding: "7px 12px", background: "transparent", border: "1px solid rgba(229,197,133,0.4)", color: "var(--accent-light-gold)", transition: "all 0.3s ease", whiteSpace: "nowrap" }}
+                          onMouseEnter={e => e.currentTarget.style.background = "rgba(229,197,133,0.1)"}
+                          onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+                        >⌥ GitHub</a>
+                      )}
                     </div>
                   </div>
                 </div>
