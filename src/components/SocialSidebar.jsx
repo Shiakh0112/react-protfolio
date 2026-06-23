@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 const socials = [
   {
     label: 'GitHub', href: 'https://github.com/Shiakh0112',
@@ -18,6 +20,17 @@ const socials = [
 ]
 
 export default function SocialSidebar() {
+  const [scrollPct, setScrollPct] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollPct(total > 0 ? (window.scrollY / total) * 100 : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className="social-sidebar" style={{
       position: 'fixed',
@@ -30,8 +43,11 @@ export default function SocialSidebar() {
       alignItems: 'center',
       gap: '12px',
     }}>
-      {/* top line */}
-      <div style={{ width: '1px', height: '60px', background: 'linear-gradient(to bottom, transparent, rgba(229,197,133,0.4))' }} />
+      {/* top line with scroll progress */}
+      <div style={{ position: 'relative', width: '1px', height: '60px' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '1px', height: '100%', background: 'linear-gradient(to bottom, transparent, rgba(229,197,133,0.2))' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '1px', height: `${scrollPct}%`, background: 'var(--accent-light-gold)', transition: 'height 0.1s linear', boxShadow: '0 0 6px rgba(229,197,133,0.8)' }} />
+      </div>
 
       {socials.map(s => (
         <a key={s.label} href={s.href} title={s.label} target="_blank" rel="noreferrer" style={{

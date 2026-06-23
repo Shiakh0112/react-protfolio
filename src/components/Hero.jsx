@@ -101,7 +101,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="hero-section relative overflow-hidden flex items-center"
+      className="hero-section relative overflow-hidden flex items-center "
       style={{
         zIndex: 1,
         height: "100vh",
@@ -110,6 +110,22 @@ export default function Hero() {
         background: "var(--primary-dark)",
       }}
     >
+      {/* Floating particles */}
+      {[...Array(12)].map((_, i) => (
+        <div key={i} className="absolute pointer-events-none" style={{
+          left: `${8 + i * 7.5}%`,
+          top: `${20 + (i % 5) * 14}%`,
+          width: i % 3 === 0 ? '3px' : '2px',
+          height: i % 3 === 0 ? '3px' : '2px',
+          borderRadius: '50%',
+          background: 'rgba(229,197,133,0.5)',
+          boxShadow: '0 0 6px rgba(229,197,133,0.4)',
+          animation: `floatParticle ${3 + (i % 4)}s ease-in-out infinite`,
+          animationDelay: `${i * 0.4}s`,
+          zIndex: 1,
+        }} />
+      ))}
+
       {/* Ceiling light */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
@@ -266,6 +282,41 @@ export default function Hero() {
                 </span>
               </a>
             </div>
+
+            {/* Ghost button */}
+            <a
+              href="#projects"
+              className="hero-btn inline-block relative overflow-hidden"
+              style={{
+                padding: "15px 35px",
+                backgroundColor: "transparent",
+                border: "1px solid rgba(229,197,133,0.5)",
+                color: "var(--accent-light-gold)",
+                fontSize: "13px",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                textDecoration: "none",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = "rgba(229,197,133,0.08)"; e.currentTarget.style.borderColor = "var(--accent-light-gold)"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(229,197,133,0.5)"; }}
+            >
+              View Projects →
+            </a>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="hero-scroll-hint flex items-center" style={{ gap: "12px", marginTop: "48px" }}>
+            <div style={{ position: "relative", width: "20px", height: "32px", border: "1.5px solid rgba(229,197,133,0.4)", borderRadius: "10px" }}>
+              <div style={{
+                position: "absolute", top: "4px", left: "50%", transform: "translateX(-50%)",
+                width: "3px", height: "6px", borderRadius: "2px",
+                background: "var(--accent-light-gold)",
+                animation: "scrollDot 1.8s ease-in-out infinite",
+              }} />
+            </div>
+            <span style={{ fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "3px", color: "var(--text-gray)" }}>Scroll</span>
           </div>
         </div>
 
@@ -292,32 +343,29 @@ export default function Hero() {
               }}
             />
             <div
-              className="relative overflow-hidden w-full h-full flex items-center justify-center"
-              style={{
-                background: "linear-gradient(135deg, #1f2025 0%, #16171c 100%)",
-                color: "var(--text-gray)",
-                fontSize: "14px",
-                letterSpacing: "1px",
-              }}
+              className="relative overflow-hidden w-full h-full"
+              style={{ background: "#0f1014" }}
             >
-              <div
-                className="absolute"
-                style={{
-                  top: "-50%",
-                  left: "-50%",
-                  width: "200%",
-                  height: "200%",
-                  background:
-                    "linear-gradient(45deg, transparent 40%, rgba(229,197,133,0.1) 50%, transparent 60%)",
-                  animation: "lightMove 8s ease-in-out infinite",
-                }}
-              />
+              <div className="absolute" style={{
+                top: '50%', left: '50%',
+                transform: 'translate(-50%,-50%)',
+                width: '200px', height: '200px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(201,169,97,0.18) 0%, transparent 70%)',
+                filter: 'blur(20px)',
+                animation: 'glowPulse 3s ease-in-out infinite',
+                zIndex: 0,
+              }} />
               <img
                 src={passportPhoto}
                 alt="Profile"
                 className="relative w-full h-full object-cover"
-                style={{ zIndex: 1, mixBlendMode: "screen" }}
+                style={{ zIndex: 1 }}
               />
+              <div className="absolute inset-0" style={{
+                background: 'linear-gradient(to top, rgba(15,16,20,0.4) 0%, transparent 50%)',
+                zIndex: 2,
+              }} />
             </div>
           </div>
         </div>
@@ -334,6 +382,14 @@ export default function Hero() {
           50%  { transform: translate(30%, 30%) rotate(180deg); }
           100% { transform: translate(-30%, -30%) rotate(360deg); }
         }
+        @keyframes floatParticle {
+          0%, 100% { transform: translateY(0px); opacity: 0.5; }
+          50%       { transform: translateY(-18px) translateX(6px); opacity: 1; }
+        }
+        @keyframes scrollDot {
+          0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
+          100% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+        }
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
           .hero-left { padding-right: 0 !important; order: 2; }
@@ -342,6 +398,10 @@ export default function Hero() {
           .hero-p { font-size: 14px !important; margin: 0 auto 28px !important; }
           .photo-frame { width: 260px !important; height: 320px !important; }
           .hero-section { padding: 0 24px !important; height: auto !important; min-height: 100vh !important; padding-top: 120px !important; padding-bottom: 60px !important; }
+          .hero-scroll-hint { display: none !important; }
+        }
+        @media (min-width: 769px) {
+          .hero-section { padding-top: 10vh !important; }
         }
         @media (max-width: 480px) {
           .hero-h1 { font-size: 28px !important; }

@@ -15,7 +15,25 @@ export default function Navbar() {
   const navRef  = useRef(null);
   const menuRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
   const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const sectionIds = links.map(l => l.href.replace('#', ''));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { threshold: 0.3 }
+    );
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -81,14 +99,15 @@ export default function Navbar() {
             {links.map(({ label, href }) => (
               <a key={label} href={href} className="nav-link" style={{
                 fontSize: "15px", fontWeight: 500, textTransform: "uppercase",
-                letterSpacing: "1.5px", color: "var(--text-white)", textDecoration: "none",
+                letterSpacing: "1.5px", textDecoration: "none",
+                color: activeSection === href.replace('#','') ? "var(--accent-light-gold-text)" : "var(--text-white)",
                 position: "relative", textShadow: "1px 1px 2px rgba(0,0,0,0.5)", transition: "color 0.3s ease",
               }}
                 onMouseEnter={e => { e.currentTarget.style.color = "var(--accent-light-gold-text)"; e.currentTarget.querySelector("span").style.width = "100%"; }}
-                onMouseLeave={e => { e.currentTarget.style.color = "var(--text-white)"; e.currentTarget.querySelector("span").style.width = "0"; }}
+                onMouseLeave={e => { e.currentTarget.style.color = activeSection === href.replace('#','') ? "var(--accent-light-gold-text)" : "var(--text-white)"; e.currentTarget.querySelector("span").style.width = activeSection === href.replace('#','') ? "100%" : "0"; }}
               >
                 {label}
-                <span style={{ display: "block", position: "absolute", bottom: "-5px", left: 0, width: "0", height: "2px", backgroundColor: "var(--text-white)", transition: "width 0.3s ease" }} />
+                <span style={{ display: "block", position: "absolute", bottom: "-5px", left: 0, width: activeSection === href.replace('#','') ? "100%" : "0", height: "2px", backgroundColor: "var(--accent-light-gold)", transition: "width 0.3s ease" }} />
               </a>
             ))}
           </div>
